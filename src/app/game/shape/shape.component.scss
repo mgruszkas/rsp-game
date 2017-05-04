@@ -1,0 +1,15 @@
+:host {
+    display: inline-block;
+    width: 100%;
+    min-height: 200px;
+    text-align: center;
+    .icon {
+        font-size: 100px;
+        margin-top: 30px;
+    }
+
+    &.active {
+        cursor: pointer;
+    }
+}
+

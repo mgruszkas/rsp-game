@@ -1,0 +1,66 @@
+:host {
+    .rsp-game-hands, .rsp-game-shapes {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        min-height: 300px;
+    }
+
+    .rsp-game-controls {
+        display: block;
+        width: 100%;
+        text-align: center;
+
+        .control-button {
+            padding: 10px;
+        }
+    }
+
+
+    .loose {
+        background-color: red;
+    }
+
+    .win {
+        background-color: green;
+    }
+
+    .draw {
+        background-color: wheat;
+    }
+
+    &:after {
+        display: block;
+        content: " ";
+        opacity: 0;
+        color: black;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 100vw;
+        height: 100px;
+        margin-left: -50vw;
+        margin-top: -30vh;
+        text-align: center;
+    }
+
+    &.counter {
+        &:after {
+            opacity: 1;
+            animation-name: counter-animation;
+            animation-duration: 3s;
+        }
+
+    }
+}
+
+@keyframes counter-animation {
+    0% { content: '3'; font-size: 60vh; }
+    30% {content: '3'; font-size: 0vh;}
+    31% { content: '2'; font-size: 60vh; }
+    60% { content: '2'; font-size: 0vh; }
+    61% { content: '1'; font-size: 60vh; }
+    90% { content: '1'; font-size: 0vh; }
+    91% { content: '0'; font-size: 60vh; }
+    100% { content: '0'; font-size: 0vh; }
+}

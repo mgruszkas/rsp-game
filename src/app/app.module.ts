@@ -3,10 +3,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component';
-import { GameComponent } from './game/game.component';
-import { HandComponent } from './game/hand/hand.component';
-import { ShapeComponent } from './game/shape/shape.component';
+// components
+import { AppComponent, GameComponent, HandComponent, ShapeComponent } from './index';
+
+// services
+import { AIPlayerService } from './index';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ShapeComponent } from './game/shape/shape.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  entryComponents: [ShapeComponent],
+  providers: [AIPlayerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,13 @@
-<p>
-  game works!
-</p>
+<article class="rsp-game" [ngClass]="getStateClass()">
+  <section class="rsp-game-hands">
+    <ng-content></ng-content>
+  </section>
+  <section class="rsp-game-controls">
+    <button class="control-button"  (click)="startOrRestart()">{{ buttonAction }}</button>
+  </section>
+  <section class="rsp-game-shapes">
+    <rsp-shape (turn)="userTurn($event)" [shape]="shapes.ROCK" class="active rock"></rsp-shape>
+    <rsp-shape (turn)="userTurn($event)" [shape]="shapes.SCISSORS"class="active scissors"></rsp-shape>
+    <rsp-shape (turn)="userTurn($event)" [shape]="shapes.PAPER"class="active paper"></rsp-shape>
+  </section>
+</article>

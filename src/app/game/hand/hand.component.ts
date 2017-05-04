@@ -1,15 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ComponentFactoryResolver, ViewContainerRef, ViewChild } from '@angular/core';
+import { SHAPES, ShapeComponent } from './../../index';
+
 
 @Component({
-  selector: 'app-hand',
-  templateUrl: './hand.component.html',
+  selector: 'rsp-hand',
+  template: `<aside class="hand">
+      <template #shapeContainer ></template>
+    </aside>
+  `,
   styleUrls: ['./hand.component.scss']
 })
 export class HandComponent implements OnInit {
-
-  constructor() { }
+  @ViewChild('shapeContainer', {read: ViewContainerRef}) public shapeContainer: ViewContainerRef;
+  constructor(private cfr: ComponentFactoryResolver) { }
 
   ngOnInit() {
+  }
+
+  public showShape(shape: SHAPES): void {
+    this.shapeContainer.clear();
+    let componentFactory = this.cfr.resolveComponentFactory(ShapeComponent);
+    let componentRef = this.shapeContainer.createComponent(componentFactory);
+    componentRef.instance.shape = shape;
+  }
+
+  public clear(): void {
+    this.shapeContainer.clear();
   }
 
 }
