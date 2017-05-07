@@ -5,7 +5,7 @@ import { SHAPES, ShapeComponent } from './../../index';
 @Component({
   selector: 'rsp-hand',
   template: `<aside class="hand">
-      <template #shapeContainer ></template>
+      <ng-template #shapeContainer ></ng-template>
     </aside>
   `,
   styleUrls: ['./hand.component.scss']
