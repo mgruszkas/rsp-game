@@ -1,6 +1,7 @@
 # Rock Scissors Paper Game
 Just another Angular2 sample application
-Live example is available [here](https://sleepy-beach-13136.herokuapp.com/rspgame/index.html)
+
+Live example is available [HERE](https://sleepy-beach-13136.herokuapp.com/rspgame/)
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
